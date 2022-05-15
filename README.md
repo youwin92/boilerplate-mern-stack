@@ -1,18 +1,26 @@
-Hello, My Friends  
-Thank you for having interest in this repository ! 
+# bolierplate
 
-To use this application, 
+bolierplate
 
-1. make dev.js file inside config folder 
-2. put mongoDB info into dev.js file 
-3. Type  " npm install " inside the root directory  ( Download Server Dependencies ) 
-4. Type " npm install " inside the client directory ( Download Front-end Dependencies )
+    npm install
+    npm install express --save
 
+    #몽고DB
+    npm install mongoose --save
 
-If you have problem, feel free to ask me ^^ 
+    npm install body-parser --save
+    
+    #서버 갱신없이 반영
+    npm install nodemon --save-dev
+    #package.json =>  "backend" : "nodemon index.js",
 
-You can watch the tutorial for this app.  
+    #비밀번호 암호화
+    npm install bcrypt --save
 
-https://www.youtube.com/channel/UCFyXA9x8lpL3EYWeYhj4C4Q?view_as=subscriber
+    npm install jsonwebtoken --save
+    npm install cookie-parser --save
 
-
+    npm install react-dropzone --save
+    npm install multer --save
+    
+    

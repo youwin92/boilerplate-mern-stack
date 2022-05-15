@@ -48,6 +48,7 @@ function UploadProductPage(props){
       return alert("모든 값을 넣어 주셔야 합니다");
     }
 
+    console.log( "props.user.userData._id = ", props.user.userData._id);
     //서버에 채운 값들을 request로 보낸다
     const body = {
       //로그인 된 사람의 ID
@@ -62,6 +63,9 @@ function UploadProductPage(props){
     axios.post("/api/product/", body)
       .then(response =>{
         if( response.data.success){
+          console.log( props );
+          debugger;
+
           alert("상품 업로드 성공");
           //업로드 이후 렌딩페이지로 이동
           props.history.push("/");

@@ -6,6 +6,7 @@ import Meta from 'antd/lib/card/Meta';
 import ImageSlider from "../../utils/ImageSlider";
 import CheckBox from "./Sections/CheckBox";
 import { continents } from "./Sections/Datas";
+import {filter} from "core-js/internals/array-iteration";
 
 function LandingPage() {
 
@@ -13,6 +14,11 @@ function LandingPage() {
   const [Skip, setSkip] = useState(0);
   const [Limit, setLimit] = useState(8);
   const [PostSize, setPostSize] = useState(0);
+  const [Filters, setFilters] = useState({
+    continents: [],
+    price:[]
+  })
+
 
   useEffect( () => {
     let body = {
@@ -58,8 +64,6 @@ function LandingPage() {
 
   const renderCard = Products.map((product, index) => {
 
-    console.log( 'product',product);
-
     return <Col lg={6} md={8} xs={24} key={index}>
       <Card
         cover={<ImageSlider images={product.images}/>}
@@ -72,9 +76,24 @@ function LandingPage() {
     </Col>;
   });
 
+  const showFilteredResults = (filters) =>{
+    let body = {
+      skip : 0,
+      limit: Limit,
+      filters: filters
 
-  const handleFilters = () => {
+    };
+    getProducts(body);
+    setSkip(0);
 
+
+  }
+
+  const handleFilters = (filters, category) => {
+    const newFilters = { ...Filters};
+    newFilters[category] = filters;
+
+    showFilteredResults(newFilters)
   };
 
     return (

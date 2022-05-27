@@ -8,8 +8,6 @@ H
 client/package-lock.json,2\6\26a733df8ec5f9ebc34add7f3b884bb18c2b5048
 @
 client/yarn.lock,1\2\129d2652724077646f57bb16e956795891e09cf9
-H
-server/routes/product.js,2\9\29848457e2e60ab26e9d4c53aaf7da9e2b73fb69
 E
 server/config/prod.js,2\3\2312150ba5433c2b04600a9ecaf0f617f78ac1d6
 D
